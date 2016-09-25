@@ -1,5 +1,7 @@
 # Fat Free CRM [![TravisCI][travis-img-url]][travis-ci-url]  [![Code Climate](https://codeclimate.com/github/fatfreecrm/fat_free_crm.png)](https://codeclimate.com/github/fatfreecrm/fat_free_crm)
 
+[![Join the chat at https://gitter.im/fat_free_crm-r5/Lobby](https://badges.gitter.im/fat_free_crm-r5/Lobby.svg)](https://gitter.im/fat_free_crm-r5/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [travis-img-url]: https://secure.travis-ci.org/fatfreecrm/fat_free_crm.png?branch=master
 [travis-ci-url]: http://travis-ci.org/fatfreecrm/fat_free_crm
 
@@ -48,9 +50,9 @@ Pull requests and bug reports are always welcome!
 
 Visit our website at http://www.fatfreecrm.com/
 
-## Rails 4 support
+## Rails 5 support
 
-The master branch is now on Rails 4.2. However, there is a [Rails 3.2 branch](https://github.com/fatfreecrm/fat_free_crm/tree/rails3) available if you still need to use it. Please note that subsequent gem releases will focus on Rails 4 (v0.14.0+ as yet unreleased).
+This branch is now on Rails 5.0.0.1 all tests pass!! BUT you may need to patch a few of dependent Gems until those are fixed. See installation instructions below.
 
 ## Important security note
 
@@ -58,7 +60,7 @@ Please note that several severe vulnerabilities have been fixed recently. You sh
 
 ## System Requirements
 
-* Ruby 2 (2.2 recommended)
+* Ruby 2 (2.3.1 recommended)
   * Ruby 1.9.3 is no longer compatible (final gem release tag v0.13.6)
   * Ruby v1.8.7 was supported until v0.11.4 (see https://github.com/fatfreecrm/fat_free_crm/tree/ruby1.8)
 * MySQL v4.1.1 or later (v5+ is recommended), SQLite v3.4 or later, or Postgres 8.4.8 or later.
@@ -68,8 +70,20 @@ Please note that several severe vulnerabilities have been fixed recently. You sh
 
 
 ## Installation
+Wait for the following patches or use the patched files provided in the sandbox folder on your local gems to proceed.
 
-Please view one of the following installation guides:
+For production mode;
+
+* rails-observers - waiting on this fix. rails/rails-observers#41
+* sass-rails - waiting on this fix. rails/sass-rails#376
+
+For testing only;
+
+* actionpack - this fix is only required for passing tests - it is not required for production. waiting on this fix rails/rails#26569
+
+I do not know if the existing installation guides will work as originally written below for reference. 
+
+Please view one of the following installation guides;
 
 ### [Setup Linux or Mac OS](http://guides.fatfreecrm.com/Setup-Linux-or-Mac-OS.html)
 
